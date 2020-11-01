@@ -1,0 +1,37 @@
+{
+  "name": "zindagi",
+  "version": "0.0.1",
+  "description": "Zindagi is a library to program life-like cellular automata like Conway's Game of Life",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": [
+    "conway",
+    "cellular",
+    "auomata",
+    "game",
+    "of",
+    "life",
+    "gol"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "author": "Tarun Batra <tarun.batra00@gmail.com>",
+  "license": "MIT",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarunbatra/zindagi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tarunbatra/zindagi/issues"
+  },
+  "homepage": "https://github.com/tarunbatra/zindagi#readme"
+}
