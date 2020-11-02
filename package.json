@@ -8,6 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
+  "exports": "./index.js",
+  "files": [ "index.js", "lib.js" ],
   "keywords": [
     "conway",
     "cellular",
@@ -22,10 +24,6 @@
   },
   "author": "Tarun Batra <tarun.batra00@gmail.com>",
   "license": "MIT",
-  "directories": {
-    "doc": "docs",
-    "example": "examples"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tarunbatra/zindagi.git"

@@ -1,4 +1,7 @@
-.vscode
-*.log
-docs
-examples
+*
+!README*
+!LICENSE*
+!package.json
+!package-lock.json
+!index.js
+!lib.js
