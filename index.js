@@ -84,6 +84,10 @@ class Zindagi {
     return this.currentState;
   }
 
+  reset() {
+    this.currentState = this.initState;
+  }
+
   isCellAlive(x, y, stitchedEdges) {
     let row = stitchedEdges ? (this.grid.rows + x) % this.grid.rows : x;
     let col = stitchedEdges ? (this.grid.columns + y) % this.grid.columns : y;
