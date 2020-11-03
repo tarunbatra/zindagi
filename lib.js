@@ -1,6 +1,6 @@
 /**
  * Sleeps for n number of seconds. Essentially a setTimeout wrapper
- *
+ * @private
  * @param {number} sec - Time in seconds
  * @returns {Promise}
  */
@@ -14,7 +14,7 @@ export async function sleep(sec) {
 
 /**
  * Escapes regex special characters in a string
- *
+ * @private
  * @param {string} string String to process
  * @returns {string} New string with escaped characters
  *
@@ -26,7 +26,7 @@ export function escapeRegex(string) {
 
 /**
  * Generates a random number between 0 and the "max" number specified
- *
+ * @private
  * @param {int} max - The upper bound of the range required
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random

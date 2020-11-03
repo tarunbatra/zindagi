@@ -1,4 +1,4 @@
-![Zindagi][logo]
+[![Zindagi][logo]][docs]
 
 Zindagi is a library to easily program and render [life-like cellular automatas][life-like-wiki] including but not limited to Highlife and [Conway's Game of Life][gol-wiki].
 
@@ -8,12 +8,12 @@ Zindagi is a library to easily program and render [life-like cellular automatas]
 import Zindagi from 'zindagi';
 
 const life = new Zindagi({
-  // Rule for conway's game of life
+  // Life-like rule
   rules: 'S23/B3',
   // Flag to enable alive cells to re-appear on
   // the other side of the board in case of overflow
   stitchedEdges: true,
-  // Symbols to represent alive and dead cells in initialState param
+  // Symbols to represent alive and dead cells in initState param
   symbols: {
     alive: '0',
     dead: '.'
@@ -55,7 +55,7 @@ npm install zindagi
 
 
 [logo]: https://res.cloudinary.com/tbking/image/upload/v1604344754/zindagi/zindagi-logo.gif
+[docs]: https://tarunbatra.com/zindagi
 [life-like-wiki]: https://en.wikipedia.org/wiki/Life-like_cellular_automaton
 [gol-wiki]: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
-[highlife-wiki]: https://en.wikipedia.org/wiki/Highlife_(cellular_automaton)
 [example-output-gif]: https://res.cloudinary.com/tbking/video/upload/e_loop/v1604362000/zindagi/glider-example.gif

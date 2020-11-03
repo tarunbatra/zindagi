@@ -4,6 +4,25 @@ import { sleep, escapeRegex, getRandomInt } from './lib.js';
  * Zindagi represents a life-like cellular automata
  */
 class Zindagi {
+  /**
+   * Initializes a life-like cellular automata
+   * @constructor
+   * @param {object} [options] - Options to pass for initialization
+   * @param {object|string} options.rules=B3/S23 - Like-like rules eg. `B3/S23` or
+   * `{ B: { 3: true }, S: { 2: true, 3: true } }`
+   * @param {boolean} options.stitchedEdges=false - Enables behavior where the opposite edges seem to be
+   *  stitched together such that the next cell of the last cell in a row is the first one.
+   * @param {string|state} [options.initState] - Initial state of the automata.
+   *  Defaults to a random state geenerated depending on the `grid` option
+   * @param {object} [options.grid] - Options for randomly generated initial state
+   * @param {number} options.grid.columns=10 - Number of columns
+   * @param {number} options.grid.rows=10 - Number of rows
+   * @param {object} [options.symbols] - Symbols to represent cell types in initState param
+   * @param {*} options.symbols.alive=⬛️ - Alive cells
+   * @param {*} options.symbols.dead=⬜️ - Dead cells
+   * @param {*} options.symbols.rowDelimeter=\n - Represents new row of cells
+   * @param {string} options.algorithm=naive - For future use
+   */
   constructor(options = {}) {
     this.rules = Zindagi.parseRules(options?.rules);
     this.algorithm = options?.algorithm || 'naive';
@@ -113,7 +132,7 @@ class Zindagi {
 
   /**
    * Checks if a given cell (x,y) is alive or not
-   *
+   * @private
    * @param {number} x - row index
    * @param {number} y - column index
    * @param {boolean} stitchedEdges - stitchedEdges flag
@@ -127,7 +146,7 @@ class Zindagi {
 
   /**
    * Calculates the next state of a given cell (x,y)
-   *
+   * @private
    * @param {number} x - row index
    * @param {number} y - column index
    * @param {boolean} stitchedEdges - stitchedEdges flag
@@ -162,11 +181,11 @@ class Zindagi {
   /**
    * Helper method to print the game on every generation
    *
-   * @param {IterableIterator} play - Return value of `.live` method
-   * @param {object} options
-   * @param {*} alive=⬛️ - Symbol to represent alive cells
-   * @param {*} dead=⬜️ - Symbol to represent dead cells
-   * @param {number} timePerGeneration=1 - Time in seconds before next generation is rendered
+   * @param {IterableIterator} play - Return value of `live` method
+   * @param {object} [options]
+   * @param {*} options.alive=⬛️ - Symbol to represent alive cells
+   * @param {*} options.dead=⬜️ - Symbol to represent dead cells
+   * @param {number} options.timePerGeneration=1 - Time in seconds before next generation is rendered
    */
   async render(play, { alive = '⬛️', dead = '⬜️', timePerGeneration = 1 } = {}) {
     if (globalThis.process) {
@@ -201,7 +220,7 @@ class Zindagi {
 
   /**
    * Generates random init state given the desired row and column count
-   *
+   * @private
    * @param {number} cols=10 - Columns required in generated state
    * @param {number} rows=10 - Rows required in generated state
    * @param {*} aliveSymbol - Symbol to represent alive cells
@@ -221,7 +240,7 @@ class Zindagi {
 
   /**
    * Parse rules provided for the automata
-   *
+   * @private
    * @param {object|string} inputRules - Rules like `B3/S23` or
    *          `{ B: { 3: true }, S: { 2: true, 3: true } }` to
    *          represent life-like automata's behavior
@@ -253,7 +272,7 @@ class Zindagi {
 
   /**
    * Parses a state in the form of string or object to the standard format
-   *
+   * @private
    * @param {string|state} [initState] - Initial state of the automata
    * @param {object} [grid] - Dimensions of the initial state equired
    * @param {number} grid.rows - Rows required in initial state
@@ -280,8 +299,12 @@ export default Zindagi;
 
 /**
  * @typedef state
- * @description An array of array used to represent
+ * @description An array of arrays used to represent
  *  a unique generation of a life-like cellular automata.
- *  Eg: [ [ '0', '.' ], [ '0', '.' ] ]
+ *  @example [
+ *   [ "0", "1", "0", "0", "0", "0" ],
+ *   [ "0", "1", "1", "0", "0", "0" ],
+ *   [ "0", "0", "0", "0", "0", "0" ]
+ * ]
  * @type {Array.<Array.<string>>}
  */
