@@ -4,7 +4,7 @@
   "description": "Zindagi is a library to program life-like cellular automata like Conway's Game of Life",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "docs": "jsdoc -c .jsdoc.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
@@ -34,5 +34,9 @@
   "bugs": {
     "url": "https://github.com/tarunbatra/zindagi/issues"
   },
-  "homepage": "https://github.com/tarunbatra/zindagi#readme"
+  "homepage": "https://github.com/tarunbatra/zindagi#readme",
+  "devDependencies": {
+    "@pixi/jsdoc-template": "^2.6.0",
+    "jsdoc": "^3.6.6"
+  }
 }

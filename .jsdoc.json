@@ -1,0 +1,11 @@
+{
+  "plugins": ["plugins/markdown"],
+  "source": {
+    "include": [ "index.js" ]
+  },
+  "opts": {
+    "readme": "README.md",
+    "destination": "docs",
+    "template": "node_modules/@pixi/jsdoc-template"
+  }
+}

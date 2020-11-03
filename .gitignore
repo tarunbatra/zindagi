@@ -1,13 +1,6 @@
-# .vscode
-# .DS_Store
-# *.log
-# node_modules
-# *.tgz
-# *.tar.gz
-*
-!README*
-!LICENSE*
-!package.json
-!package-lock.json
-!index.js
-!lib.js
+node_modules
+.vscode
+*.gz
+*.tgz
+.DS_Store
+test.js

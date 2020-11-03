@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Zindagi - A Game of Life</title>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,700" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/main.css">
+
+    
+    <script>
+    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{}};
+    </script>
+    
+
+    
+</head>
+<body>
+<div id="wrap" class="clearfix">
+    
+<div class="navigation">
+    <h3 class="applicationName"><a href="index.html"></a></h3>
+    <button id="menuToggle" class="btn btn-link btn-lg menu-toggle">
+        <span class="glyphicon glyphicon-menu-hamburger"></span>
+    </button>
+    <div class="search">
+        <input id="search" type="text" class="form-control input-md" placeholder="Search...">
+    </div>
+    <ul class="list">
+    
+    
+        <li class="item" data-name="global">
+            <span class="title namespace ">
+                
+                <span class="namespaceTag">
+                    <span class="glyphicon glyphicon-globe"></span>
+                </span>
+                
+                
+                    <a href="global.html">Global</a>
+                
+            </span>
+            
+            <ul class="members itemMembers">
+            
+            </ul>
+            
+            <ul class="typedefs itemMembers">
+            
+            <span class="subtitle">Typedefs</span>
+            
+                <li class="parent" data-name="state"><a href="global.html#state">state</a></li>
+            
+            </ul>
+            
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            
+            <ul class="methods itemMembers">
+            
+            </ul>
+            
+            <ul class="events itemMembers">
+            
+            </ul>
+            
+        </li>
+    
+        <li class="item" data-name="Zindagi">
+            <span class="title  ">
+                
+                
+                    <a href="Zindagi.html">Zindagi</a>
+                
+            </span>
+            
+            <ul class="members itemMembers">
+            
+            </ul>
+            
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li class="parent  " data-name="Zindagi.genRandomInitState"><a href="Zindagi.html#.genRandomInitState">genRandomInitState</a></li>
+            
+                <li class="parent  " data-name="Zindagi.parseInitState"><a href="Zindagi.html#.parseInitState">parseInitState</a></li>
+            
+                <li class="parent  " data-name="Zindagi.parseRules"><a href="Zindagi.html#.parseRules">parseRules</a></li>
+            
+                <li class="parent  " data-name="Zindagi#isCellAlive"><a href="Zindagi.html#isCellAlive">isCellAlive</a></li>
+            
+                <li class="parent  " data-name="Zindagi#live"><a href="Zindagi.html#live">live</a></li>
+            
+                <li class="parent  " data-name="Zindagi#nextStateOfCell"><a href="Zindagi.html#nextStateOfCell">nextStateOfCell</a></li>
+            
+                <li class="parent  " data-name="Zindagi#render"><a href="Zindagi.html#render">render</a></li>
+            
+                <li class="parent  " data-name="Zindagi#reset"><a href="Zindagi.html#reset">reset</a></li>
+            
+                <li class="parent  " data-name="Zindagi#skip"><a href="Zindagi.html#skip">skip</a></li>
+            
+            </ul>
+            
+            <ul class="events itemMembers">
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+    <div class="main">
+        <h1 class="page-title" data-filename="index.html">Index</h1>
+        
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article class="readme content-size"><p><img src="https://res.cloudinary.com/tbking/image/upload/v1604344754/zindagi/zindagi-logo.gif" alt="Zindagi"></p>
+<h2>Usage</h2>
+<pre class="prettyprint source lang-js"><code>import Zindagi from 'zindagi';
+
+const life = new Zindagi({
+  // Rule for conway's game of life
+  rules: 'S23/B3',
+  // Flag to enable alive cells to re-appear on
+  // the other side of the board in case of overflow
+  stitchedEdges: true,
+  // Symbols to represent alive and dead cells in initialState param
+  symbols: {
+    alive: '0',
+    dead: '.'
+  },
+  // Initial state of the automata
+  initState: `..........
+              .0........
+              ..00......
+              .00.......
+              ..........
+              ..........
+              ..........
+              ..........`
+});
+
+// play for 1000 generations
+const generations = life.live(1000);
+
+// in built method to render the automata to console/terminal
+const life.render(generations, {
+    alive: '⬛️',            // represent alive cells with black block
+    dead: '⬜️',             // represent dead cells with white block
+    timePerGeneration: 0.5, // 0.5 seconds per generation
+});
+</code></pre>
+<h2>Output</h2>
+<p><img src="https://res.cloudinary.com/tbking/video/upload/e_loop/v1604362000/zindagi/glider-example.gif" alt="Example Output"></p>
+<h2>Install</h2>
+<pre class="prettyprint source"><code>npm install zindagi
+</code></pre>
+<h2>TODO</h2>
+<ul>
+<li>[ ] Documentation</li>
+<li>[ ] Tests</li>
+<li>[ ] Optimizations</li>
+</ul></article>
+    </section>
+
+
+
+
+
+
+        
+
+        <footer class="content-size">
+            <div class="footer">
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Tue Nov 03 2020 01:24:48 GMT+0100 (Central European Standard Time)
+            </div>
+        </footer>
+    </div>
+</div>
+<script>prettyPrint();</script>
+<script src="scripts/main.js"></script>
+
+
+</body>
+</html>
