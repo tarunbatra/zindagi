@@ -4,15 +4,15 @@
   "description": "Zindagi is a library to program life-like cellular automata like Conway's Game of Life",
   "main": "index.js",
   "scripts": {
-    "docs": "jsdoc -c .jsdoc.json",
+    "build": "babel *.js -d cjs",
+    "docs": "rm -rf docs && jsdoc -c .jsdoc.json --debug --verbose",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
-  "exports": "./index.js",
-  "files": [
-    "index.js",
-    "lib.js"
-  ],
+  "exports": {
+    "import": "./index.js",
+    "require": "./cjs/index.js"
+  },
   "keywords": [
     "conway",
     "cellular",
@@ -36,7 +36,32 @@
   },
   "homepage": "https://github.com/tarunbatra/zindagi#readme",
   "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
     "@pixi/jsdoc-template": "^2.6.0",
     "jsdoc": "^3.6.6"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "debug": true,
+          "targets": {
+            "node": "8"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-transform-runtime",
+        {
+          "regenerator": true
+        }
+      ]
+    ]
   }
 }

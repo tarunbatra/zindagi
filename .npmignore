@@ -1,7 +1,4 @@
 *
-!README*
-!LICENSE*
-!package.json
-!package-lock.json
 !index.js
 !lib.js
+!cjs/*.js

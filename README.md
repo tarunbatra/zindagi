@@ -5,7 +5,8 @@ Zindagi is a library to easily program and render [life-like cellular automatas]
 ## Usage
 
 ```js
-import Zindagi from 'zindagi';
+import { Zindagi } from 'zindagi';        // use ES modules
+// const { Zindagi } = require('zindagi); // or CommonJS
 
 const life = new Zindagi({
   // Life-like rule

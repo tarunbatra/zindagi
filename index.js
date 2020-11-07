@@ -3,7 +3,7 @@ import { sleep, escapeRegex, getRandomInt } from './lib.js';
 /**
  * Zindagi represents a life-like cellular automata
  */
-class Zindagi {
+export class Zindagi {
   /**
    * Initializes a life-like cellular automata
    * @constructor
@@ -110,7 +110,7 @@ class Zindagi {
   /**
    * Skips n generations ahead
    *
-   * @param {n} generations - Generations to skip
+   * @param {number} generations - Generations to skip
    * @returns {state} The state after skipping
    */
   skip(generations) {
@@ -294,8 +294,6 @@ class Zindagi {
     }
   }
 }
-
-export default Zindagi;
 
 /**
  * @typedef state
