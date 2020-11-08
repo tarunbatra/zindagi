@@ -36,6 +36,9 @@
     "url": "https://github.com/tarunbatra/zindagi/issues"
   },
   "homepage": "https://github.com/tarunbatra/zindagi#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.12.5"
+  },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
