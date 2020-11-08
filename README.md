@@ -40,7 +40,7 @@ const life = new Zindagi({
 const generations = life.live(1000);
 
 // in built method to render the automata to console/terminal
-const life.render(generations, {
+life.render(generations, {
     alive: '⬛️',            // represent alive cells with black block
     dead: '⬜️',             // represent dead cells with white block
     timePerGeneration: 0.5, // 0.5 seconds per generation
