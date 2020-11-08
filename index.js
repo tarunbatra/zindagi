@@ -39,25 +39,31 @@ export class Zindagi {
 
     // A string representation of the currentState
     // generated on call of toString method
-    this.str = null;
+    this.str = {};
   }
 
   set currentState(state) {
     this.state = state;
-    this.str = null;
+    this.str = {};
   }
 
   get currentState() {
     return this.state;
   }
 
-  toString({ alive, dead, eol = '\n' } = {}) {
+  toString({ alive, dead, rowDelimeter = '\n', columnDelimeter = '' } = {}) {
     // If a string representation of the current state exists, return it
-    if (this.str) return this.str;
+    if (this.str
+      && this.str.alive === alive
+      && this.str.dead === dead
+      && this.str.rowDelimeter === rowDelimeter
+      && this.columnDelimeter === columnDelimeter) {
+        return this.str.value;
+      }
     // Convert the Array of arrays to a string grid
-    let board = this.currentState.map(row => row.join('')).join(eol);
+    let board = this.currentState.map(row => row.join(columnDelimeter)).join(rowDelimeter);
 
-    // If the internal representation os cells is different from
+    // If the internal representation of cells is different from
     // the params provided, replace using regex.
     // TODO: Find an efficient way to do this
     if (alive != null && alive !== this.symbols.alive) {
@@ -69,8 +75,8 @@ export class Zindagi {
       board = board.replace(deadRegex, dead);
     }
     // Save the string generated
-    this.str = board;
-    return this.str;
+    this.str = { value: board, alive, dead, rowDelimeter, columnDelimeter };
+    return this.str.value;
   }
 
   /**
