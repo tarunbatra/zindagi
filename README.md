@@ -55,11 +55,28 @@ life.render(generations, {
 npm install zindagi
 ```
 
+## Documentation
+This is a list of the methods supproted. A detailed documentation is available in the [documentation section][zindagi-class-doc] of the homepage.
+
+|Method|Description|
+|:-----|:----------|
+|`.live(n)`|Returns an [iterator][mdn-iterator-doc] of the current state plus `n` subsequent states|
+|`.skip(n)`|Returns the current state after moving ahead `n` states|
+|`.reset()`|Resets the current state to the `initState`|
+|`.toString(opts)`|Returns the current state represented as a formatted string|
+|`.render(iterator, opts)`|Renders a cellular automata in console using options|
+
+<br>
+
 ## TODO
 - [x] Documentation
-- [ ] Tests
+- [x] Tests
 - [ ] Optimizations
+- [ ] HashLife implementation
 
+<br>
+
+__Contributions are welcome!__
 
 [logo]: https://res.cloudinary.com/tbking/image/upload/v1604344754/zindagi/zindagi-logo.gif
 [docs]: https://tarunbatra.com/zindagi
@@ -75,3 +92,6 @@ npm install zindagi
 [life-like-wiki]: https://en.wikipedia.org/wiki/Life-like_cellular_automaton
 [gol-wiki]: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 [example-output-gif]: https://res.cloudinary.com/tbking/video/upload/e_loop/v1604362000/zindagi/glider-example.gif
+
+[zindagi-class-doc]: https://tarunbatra.com/zindagi/Zindagi.html
+[mdn-iterator-doc]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol
